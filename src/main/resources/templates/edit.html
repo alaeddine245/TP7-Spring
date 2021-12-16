@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="default">
+    <head>
+        <title>Edit User</title>
+    </head>
+    <body>
+        <div layout:fragment="content" class="row">
+            <div class="col-xs-8 col-md-8">
+                <h3>
+                    <a href="/user" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> User</a>
+                </h3>
+                <h2>Edit User</h2>
+                <form action="/update">
+                    <div class="form-group">
+                        <label for="email">Login:</label>
+                        <input type="text" class="form-control" name="login" th:value="${user.login}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Password:</label>
+                        <input type="text" class="form-control" name="pass" th:value="${user.pass}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" class="form-control" name="email" th:value="${user.email}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ville:</label>
+                        <input type="text" class="form-control" name="ville" th:value="${user.ville}" />
+                    </div>
+                    <input type="hidden" name="id" th:value="${user.id}" />
+                    <button type="submit" class="btn btn-success">Save</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
